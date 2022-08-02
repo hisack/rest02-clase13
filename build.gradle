@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'war'
+    id "io.freefair.lombok" version "6.5.0.2"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //CDI
+    // https://mvnrepository.com/artifact/org.jboss.weld.servlet/weld-servlet-core
+    implementation group: 'org.jboss.weld.servlet', name: 'weld-servlet-core', version: '5.0.1.Final'
+    //REST
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-core', version: '6.0.1.Final'
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '6.0.1.Final'
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '6.0.1.Final'
+    // CDI+REST
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-cdi', version: '6.0.1.Final'
+    //JDBC POSTGRESQL
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.4.0'
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
